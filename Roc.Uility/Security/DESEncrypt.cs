@@ -1,8 +1,8 @@
 ﻿/*******************************************************************************
-    * Copyright 2016 Roc.Framework 版权所有
-    * Author: Roc Ching
+    * Copyright 2018 Roc.Framework 版权所有
+    * Author: Roc Qing
     * Description: Roc 快速开发平台
-    * Date：2016-09-12
+    * Date：2018-09-12
     *********************************************************************************/
 using System;
 using System.Security.Cryptography;
@@ -15,7 +15,7 @@ namespace Roc.Uility
     /// </summary>
     public class DESEncrypt
     {
-        private static string DESKey = "nfine_desencrypt_2016";
+        private static string DESKey = "nfine_desencrypt_2018";
 
         #region ========加密========
         /// <summary>

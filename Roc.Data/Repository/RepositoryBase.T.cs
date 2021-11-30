@@ -1,9 +1,9 @@
 ﻿
 /*******************************************************************************
-    * Copyright 2016 Roc.Framework 版权所有
-    * Author: Roc Ching
+    * Copyright 2018 Roc.Framework 版权所有
+    * Author: Roc Qing
     * Description: Roc 快速开发平台
-    * Date：2016-09-12
+    * Date：2018-09-12
     *********************************************************************************/
 using Roc.Uility;
 using System;
@@ -132,7 +132,7 @@ namespace Roc.Data
         public IEnumerable<TEntity> GetPagingList(Pagination p, Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, object>> orderBy)
         {
             var sql = this.GetSqlLam().Where(expression).OrderBy(orderBy);
-            // TODO: (已实现) 修复用户管理列表查询出错 - 朱锦润                
+            // TODO: (已实现) 修复用户管理列表查询出错 - Roc Qing                
             //var sqlCount = new SqlLam<TEntity>().Where(expression);
             var sqlCount = new SqlLam<TEntity>().Where(expression).Count();
             return this.GetPagingList(p, sql, sqlCount);

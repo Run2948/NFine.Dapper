@@ -1,8 +1,7 @@
 ﻿/*******************************************************************************
- * Copyright © 2016 NFine.Framework 版权所有
+ * Copyright © 2018 NFine.Framework 版权所有
  * Author: NFine
  * Description: NFine快速开发平台
- * Website：http://www.nfine.cn
 *********************************************************************************/
 using System;
 using System.Collections;
@@ -137,7 +136,7 @@ namespace Roc.Uility
                 HttpWebResponse HttpWResp = (HttpWebResponse)request.GetResponse();
                 myStream = HttpWResp.GetResponseStream();
             }
-            catch (WebException e)
+            catch (WebException)
             {
                 //LogResult(e.Message);
                 return "";
@@ -433,7 +432,7 @@ namespace Roc.Uility
                 responseStr = reader2.ReadToEnd();
                 //logger.Debug(string.Format("File uploaded, server response is: {0}", responseStr));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //logger.Error("Error uploading file", ex);
                 if (wresp != null)
@@ -499,7 +498,7 @@ namespace Roc.Uility
                 responseStr = reader2.ReadToEnd();
                 // logger.Error(string.Format("File uploaded, server response is: {0}", responseStr));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //logger.Error("Error uploading file", ex);
                 if (wresp != null)

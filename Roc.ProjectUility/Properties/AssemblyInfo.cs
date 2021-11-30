@@ -1,8 +1,8 @@
 ﻿/*******************************************************************************
-    * Copyright 2016 Roc.Framework 版权所有
-    * Author: Roc Ching
+    * Copyright 2018 Roc.Framework 版权所有
+    * Author: Roc Qing
     * Description: Roc 快速开发平台
-    * Date：2016-09-12
+    * Date：2018-09-12
     *********************************************************************************/using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Roc.ProjectUility")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

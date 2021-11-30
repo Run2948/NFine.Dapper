@@ -1,0 +1,30 @@
+﻿/*******************************************************************************
+    * Copyright 2016 Roc.Framework 版权所有
+    * Author: Roc Ching
+    * Description: Roc 快速开发平台
+    * Date：2016-09-12
+    *********************************************************************************/using System.Web.Mvc;
+
+namespace Roc.Web.Areas.ExampleManage
+{
+    public class ExampleManageAreaRegistration : AreaRegistration
+    {
+        public override string AreaName
+        {
+            get
+            {
+                return "ExampleManage";
+            }
+        }
+
+        public override void RegisterArea(AreaRegistrationContext context)
+        {
+            context.MapRoute(
+                this.AreaName + "_Default",
+                this.AreaName + "/{controller}/{action}/{id}",
+                new { area = this.AreaName, controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new string[] { "Roc.Web.Areas." + this.AreaName + ".Controllers" }
+            );
+        }
+    }
+}

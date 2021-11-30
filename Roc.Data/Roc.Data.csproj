@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F71003E8-A836-48F4-9DF6-DF9095CEBD18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roc.Data</RootNamespace>
+    <AssemblyName>Roc.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dapper\SqlMapper.cs" />
+    <Compile Include="Extensions\DbHelper.cs" />
+    <Compile Include="Repository\IRepositoryBase.T.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RepositoryBase.T.cs" />
+    <Compile Include="SqlBuilder\Adapter\ISqlAdapter.cs" />
+    <Compile Include="SqlBuilder\Adapter\SqlAdapterBase.cs" />
+    <Compile Include="SqlBuilder\Adapter\SqlServer2008Adapter.cs" />
+    <Compile Include="SqlBuilder\Adapter\SqlServer2012Adapter.cs" />
+    <Compile Include="SqlBuilder\Adapter\SqlServerAdapterBase.cs" />
+    <Compile Include="SqlBuilder\Attributes\KeyAttribute.cs" />
+    <Compile Include="SqlBuilder\Builder\SqlQueryBuilder.cs" />
+    <Compile Include="SqlBuilder\Builder\SqlQueryBuilderExpr.cs" />
+    <Compile Include="SqlBuilder\Builder\SqlQueryBuilderSpec.cs" />
+    <Compile Include="SqlBuilder\Resolver\EntityResolver.cs" />
+    <Compile Include="SqlBuilder\Resolver\ExpressionTree\LikeNode.cs" />
+    <Compile Include="SqlBuilder\Resolver\ExpressionTree\MemberNode.cs" />
+    <Compile Include="SqlBuilder\Resolver\ExpressionTree\Node.cs" />
+    <Compile Include="SqlBuilder\Resolver\ExpressionTree\OperationNode.cs" />
+    <Compile Include="SqlBuilder\Resolver\ExpressionTree\SingleOperationNode.cs" />
+    <Compile Include="SqlBuilder\Resolver\ExpressionTree\ValueNode.cs" />
+    <Compile Include="SqlBuilder\Resolver\LambdaResolver.cs" />
+    <Compile Include="SqlBuilder\Resolver\LambdaResolverIsIn.cs" />
+    <Compile Include="SqlBuilder\Resolver\LambdaResolverQuery.cs" />
+    <Compile Include="SqlBuilder\Resolver\LambdaResolverSpec.cs" />
+    <Compile Include="SqlBuilder\Resolver\LambdaResolverTree.cs" />
+    <Compile Include="SqlBuilder\SqlLam.cs" />
+    <Compile Include="SqlBuilder\SqlLamBase.cs" />
+    <Compile Include="SqlBuilder\Attributes\ColumnAttribute.cs" />
+    <Compile Include="SqlBuilder\Attributes\TableAttribute.cs" />
+    <Compile Include="SqlBuilder\ValueObjects\LikeMethod.cs" />
+    <Compile Include="SqlBuilder\ValueObjects\SelectFunction.cs" />
+    <Compile Include="SqlBuilder\ValueObjects\SqlAdapter.cs" />
+    <Compile Include="SqlBuilder\ValueObjects\SqlType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roc.Uility\Roc.Uility.csproj">
+      <Project>{db19ce03-c307-43fe-a209-08aa4ae10e21}</Project>
+      <Name>Roc.Uility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
